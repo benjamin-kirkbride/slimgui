@@ -19,6 +19,7 @@ namespace nb = nanobind;
 using namespace nb::literals;
 
 extern void implot_bindings(nb::module_& implot);  // implot_bindings.cpp
+extern void file_dialog_bindings(nb::module_& file_dialog);  // file_dialog_bindings.cpp
 
 #include "type_casts.h"
 
@@ -1598,4 +1599,8 @@ NB_MODULE(slimgui_ext, top) {
     // Implot
     nb::module_ implot = top.def_submodule("implot", "ImPlot bindings");
     implot_bindings(implot);
+
+    // ImGuiFileDialog
+    nb::module_ file_dialog = top.def_submodule("file_dialog", "ImGuiFileDialog bindings");
+    file_dialog_bindings(file_dialog);
 }

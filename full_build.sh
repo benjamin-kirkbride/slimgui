@@ -23,6 +23,7 @@ python -m nanobind.stubgen -i build/cp312-abi3-macosx_26_0_arm64 -q -m slimgui_e
 # Apply workaround for https://github.com/wjakob/nanobind/issues/1155
 python gen/stubfixer.py src/slimgui/slimgui_ext/implot.pyi -o src/slimgui/slimgui_ext/implot.pyi
 python gen/stubfixer.py src/slimgui/slimgui_ext/imgui.pyi -o src/slimgui/slimgui_ext/imgui.pyi
+python gen/stubfixer.py src/slimgui/slimgui_ext/file_dialog.pyi -o src/slimgui/slimgui_ext/file_dialog.pyi
 
 # imgui docs:
 python gen/amend_func_docs.py --cimgui-definitions-file gen/cimgui/definitions.json --imgui-h src/c/imgui/imgui.h --pyi-file src/slimgui/slimgui_ext/imgui.pyi -o src/slimgui/slimgui_ext/imgui.pyi
