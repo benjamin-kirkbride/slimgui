@@ -13,6 +13,10 @@ find_package(nanobind CONFIG REQUIRED)
 #add_definitions(-DIMGUI_DISABLE_OBSOLETE_FUNCTIONS=1)
 add_definitions(-DIMGUI_DISABLE_OBSOLETE_KEYIO=1)
 
+if(WIN32)
+  add_definitions(-DUSE_STD_FILESYSTEM)
+endif()
+
 nanobind_add_module(slimgui_ext
   NB_STATIC
   STABLE_ABI
